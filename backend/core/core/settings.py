@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.github",
 
     # REST Auth
     "dj_rest_auth",
@@ -142,6 +143,14 @@ SOCIALACCOUNT_PROVIDERS = {
         "APP": {
             "client_id": os.getenv("GOOGLE_CLIENT_ID"),
             "secret": os.getenv("GOOGLE_SECRET"),
+            "key": "",
+        },
+    },
+    "github": {
+        "SCOPE": ["read:user", "user:email"],
+        "APP": {
+            "client_id": os.getenv("GITHUB_CLIENT_ID"),
+            "secret": os.getenv("GITHUB_SECRET"),
             "key": "",
         },
     }
