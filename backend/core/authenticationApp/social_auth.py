@@ -24,7 +24,7 @@ class GoogleLoginView(SocialLoginView):
         }
         google_auth_url = "https://accounts.google.com/o/oauth2/v2/auth?" + urlencode(params)
         return redirect(google_auth_url)
-
+ 
 
 class GoogleCallbackView(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
