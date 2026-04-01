@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from authenticationApp.social_auth import GoogleLoginView, GoogleCallbackView
+from authenticationApp.social_auth import GoogleLoginView, GoogleCallbackView, GithubLoginView, GithubCallbackView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,6 @@ urlpatterns = [
      # 🔥 your custom flow
     path("api/auth/google/login/", GoogleLoginView.as_view()),
     path("api/auth/google/callback/", GoogleCallbackView.as_view()),
+    path("api/auth/github/login/", GithubLoginView.as_view()),
+    path("api/auth/github/callback/", GithubCallbackView.as_view()),
 ]
